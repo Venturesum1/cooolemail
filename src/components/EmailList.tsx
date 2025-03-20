@@ -22,7 +22,7 @@ const EmailList = ({ selectedEmail, onSelectEmail }: EmailListProps) => {
     const fetchEmails = async () => {
       try {
         const category = "Inbox";
-        const response = await axios.get(`http://localhost:5001/api/emails/category/${category || "Inbox"}`)
+        const response = await axios.get(`https://cooolemail.onrender.com/api/emails/category/${category || "Inbox"}`)
         console.log(response.data)
         setEmails(response.data || []);
       } catch (err) {
@@ -61,7 +61,7 @@ const EmailList = ({ selectedEmail, onSelectEmail }: EmailListProps) => {
   };
   const handleReply = async (email: Email) => {
     try {
-      const response = await axios.post("http://localhost:5001/reply", { body: email.body });
+      const response = await axios.post("https://cooolemail.onrender.com/reply", { body: email.body });
       alert("Reply Sent: " + response.data.message);
     } catch (error) {
       console.error("❌ Error sending reply:", error);

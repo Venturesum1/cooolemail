@@ -70,7 +70,7 @@ const EmailDetail = ({ email, onBack, onReply }: EmailDetailProps) => {
   };
   const handleReply = async (email: Email) => {
     try {
-      const response = await axios.post("http://localhost:5001/reply", { body: email.body });
+      const response = await axios.post("https://cooolemail.onrender.com/reply", { body: email.body });
       alert("Reply Sent: " + response.data.message);
     } catch (error) {
       console.error("❌ Error sending reply:", error);

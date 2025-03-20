@@ -48,7 +48,7 @@ const Index = () => {
   const fetchData = async()=>{
     const category = "Inbox"
     try {
-      const res = await axios.get(`http://localhost:5001/api/emails/category/${category || "Inbox"}`)
+      const res = await axios.get(`https://cooolemail.onrender.com/api/emails/category/${category || "Inbox"}`)
       setEmail(res.data)
     } catch (error) {
       console.log("Error" + error)
